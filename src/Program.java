@@ -13,7 +13,7 @@ public class Program {
 
 		Employees employees;
 
-		List<Employees> lista = new ArrayList<>();
+		List<Employees> list = new ArrayList<>();
 
 		String name;
 		int id, n;
@@ -33,14 +33,14 @@ public class Program {
 			System.out.print("Salary: ");
 			salary = sc.nextDouble();
 			employees = new Employees(id, name, salary);
-			lista.add(employees);
+			list.add(employees);
 		}
 
 		System.out.println();
 		System.out.print("Enter the employee id that will have salary increase: ");
 		idIncrease = sc.nextInt();
 
-		employees = lista.stream().filter(x -> x.getId() == idIncrease).findFirst().orElse(null);
+		employees = list.stream().filter(x -> x.getId() == idIncrease).findFirst().orElse(null);
 
 		if (employees == null) {
 			System.out.println("This id does not exist!");
@@ -52,7 +52,7 @@ public class Program {
 
 		System.out.println();
 		System.out.println("List of employees: ");
-		for (Employees x : lista) {
+		for (Employees x : list) {
 			System.out.println(x);
 		}
 
